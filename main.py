@@ -18,6 +18,7 @@ def main():
 
         microscope_image = read_image(core)
         print("Image dimensions: {}".format(microscope_image.shape))
+        Image.fromarray(microscope_image).save("image.tif")
 
 
         bubble_ramp_image = make_bubble_ramps(microscope_image)
