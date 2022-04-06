@@ -21,14 +21,14 @@ def main():
         Image.fromarray(microscope_image).save("image.tif")
 
 
-        bubble_ramp_image = make_bubble_ramps(microscope_image)
-        assert bubble_ramp_image.dtype == np.uint8, "Bubble ramp image should be 8 bit to work right with PIL Image"
-        bubble_ramp_pil_img = Image.fromarray(bubble_ramp_image, 'L')
-        bubble_ramp_pil_img.save("data/image.tif")
+        # bubble_ramp_image = make_bubble_ramps(microscope_image)
+        # assert bubble_ramp_image.dtype == np.uint8, "Bubble ramp image should be 8 bit to work right with PIL Image"
+        # bubble_ramp_pil_img = Image.fromarray(bubble_ramp_image, 'L')
+        # bubble_ramp_pil_img.save("data/image.tif")
 
         project_image = Image.new('L', (slm_height, slm_width))
-        project_image = project_image.resize([int(camera_slm_zoom_ratio * s) for s in project_image.size])
-        project_image.paste(bubble_ramp_image, camera_offset_rel_to_slm)
+        # bubble_ramp_image = bubble_ramp_image.resize([int(camera_slm_zoom_ratio * s) for s in bubble_ramp_image.size])
+        # project_image.paste(bubble_ramp_image, camera_offset_rel_to_slm)
 
         send_slm_image(create_slm_mask)
 
