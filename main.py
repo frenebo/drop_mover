@@ -17,7 +17,7 @@ def main():
         slm_name, slm_height, slm_width = get_slm_info(core)
 
         microscope_image = read_image(core)
-        print("Image dimensions: {}".format((tagged_image.tags['Height'], tagged_image.tags['Width'])))
+        print("Image dimensions: {}".format(microscope_image.shape))
 
         bubble_ramp_image = make_bubble_ramps(microscope_image)
         assert bubble_ramp_image.dtype == np.uint8, "Bubble ramp image should be 8 bit to work right with PIL Image"
