@@ -105,3 +105,4 @@ def make_bubble_ramps(im, image_background=None, invert_BW=False, sigma_for_edge
         ramp_mask[bubble_start_x:bubble_end_x,:] = ramp
 
         bubble_paint += ramp_mask * bubble_bin_mask
+    return bubble_paint
