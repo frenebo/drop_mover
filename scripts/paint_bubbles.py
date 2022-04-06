@@ -99,6 +99,7 @@ def make_bubble_ramps(im, image_background=None, invert_BW=False, sigma_for_edge
         ramp = np.transpose(np.tile(ramp, (img_height,1)))
         print("Tiled ramp shape:  {}".format(ramp.shape))
         print("Image shape: {}".format(bubble_paint.shape))
+        print("bubble start x: {} end x: {}".format(bubble_start_x, bubble_end_x))
         # print("Ramp shape: ")
         ramp_mask = np.zeros_like(bubble_paint)
         ramp_mask[bubble_start_x:bubble_end_x,:] = ramp
