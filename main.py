@@ -19,9 +19,8 @@ def main():
         microscope_image = read_image(core)
         print("Image dimensions: {}".format(microscope_image.shape))
 
-        tif_img = np.array(Image.open("img_0000.tif"))
 
-        bubble_ramp_image = make_bubble_ramps(tif_img, invert_BW=True)
+        bubble_ramp_image = make_bubble_ramps(microscope_image)
         assert bubble_ramp_image.dtype == np.uint8, "Bubble ramp image should be 8 bit to work right with PIL Image"
         bubble_ramp_pil_img = Image.fromarray(bubble_ramp_image, 'L')
         bubble_ramp_pil_img.save("data/image.tif")
