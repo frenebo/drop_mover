@@ -27,7 +27,7 @@ def main():
         bubble_ramp_pil_img.save("data/image.tif")
 
         project_image = Image.new('L', (slm_height, slm_width))
-        project_image = project_image.resize([int(camera_slm_zoom_ratio * s) for s in im.size])
+        project_image = project_image.resize([int(camera_slm_zoom_ratio * s) for s in project_image.size])
         project_image.paste(bubble_ramp_image, camera_offset_rel_to_slm)
 
         send_slm_image(create_slm_mask)
