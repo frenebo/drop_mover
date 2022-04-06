@@ -92,8 +92,8 @@ def make_bubble_ramps(im, image_background=None, invert_BW=False, sigma_for_edge
         # Only want regions of the correct value in BW - either zero or one
         # depending on whether the region fluid is labeled
 
-        bubble_start_x = np.min(region_border_coords_xy[1])
-        bubble_end_x = np.max(region_border_coords_xy[1])
+        bubble_start_x = np.min(region_border_coords_xy[0])
+        bubble_end_x = np.max(region_border_coords_xy[0])
         ramp = np.linspace(0,MAX_BRIGHTNESS, bubble_end_x - bubble_start_x,dtype=bubble_paint.dtype)
         print("Ramp width:  {}".format(ramp.shape))
         ramp = np.transpose(np.tile(ramp, (img_height,1)))
