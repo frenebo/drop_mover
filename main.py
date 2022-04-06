@@ -5,9 +5,6 @@ from scripts.paint_bubbles import make_bubble_ramps
 
 
 
-if __name__ == "__main__":
-    main()
-
 def main():
     camera_offset_rel_to_slm = (0,0)
     camera_slm_zoom_ratio = 1
@@ -30,3 +27,7 @@ def main():
         project_image.paste(bubble_ramp_image, camera_offset_rel_to_slm)
 
         send_slm_image(create_slm_mask)
+
+
+if __name__ == "__main__":
+    main()
