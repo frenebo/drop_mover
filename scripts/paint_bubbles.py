@@ -54,6 +54,8 @@ def threshold_single_image(im):
 def make_bubble_ramps(im, image_background=None, invert_BW=False, sigma_for_edges=2):
     # divide the image by the background
     # and make the signal even
+    print("Image min: {}".format(im.min()))
+    print("Image max: {}".format(im.max()))
 
     im_eq = equalize_image(im,sigma_for_edges, background=image_background)
 
@@ -105,4 +107,5 @@ def make_bubble_ramps(im, image_background=None, invert_BW=False, sigma_for_edge
         ramp_mask[bubble_start_x:bubble_end_x,:] = ramp
 
         bubble_paint += ramp_mask * bubble_bin_mask
+
     return bubble_paint
