@@ -96,7 +96,7 @@ def make_bubble_ramps(im, image_background=None, invert_BW=False, sigma_for_edge
         bubble_end_x = np.max(region_border_coords_xy[1])
         ramp = np.linspace(0,MAX_BRIGHTNESS, bubble_end_x - bubble_start_x,dtype=bubble_paint.dtype)
         print("Ramp width:  {}".format(ramp.shape))
-        ramp = np.tile(ramp, (img_height,1))
+        ramp = np.tile(np.transpose(ramp), (1,img_height))
         print("Tiled ramp shape:  {}".format(ramp.shape))
         print("Image shape: {}".format(bubble_paint.shape))
         # print("Ramp shape: ")
