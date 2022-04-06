@@ -1,7 +1,7 @@
 from pycromanager import Bridge
 import numpy as np
-from .utilities import send_slm_image, get_slm_info, read_image
-from .image_processing import make_bubble_ramps
+from scripts.utilities import send_slm_image, get_slm_info, read_image
+from scripts.image_processing import make_bubble_ramps
 
 
 
