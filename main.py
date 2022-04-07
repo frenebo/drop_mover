@@ -30,6 +30,7 @@ def main():
         # bubble_ramp_image = bubble_ramp_image.resize([int(camera_slm_zoom_ratio * s) for s in bubble_ramp_image.size])
         # project_image.paste(bubble_ramp_image, camera_offset_rel_to_slm)
         project_image = np.transpose(np.array(project_image))
+        project_image[0:project_image.shape[0]//2,0:project_image.shape[1]//2] = 255
 
         send_slm_image(core,slm_name,project_image)
 
